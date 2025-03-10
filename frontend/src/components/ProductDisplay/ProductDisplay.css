@@ -93,6 +93,7 @@
     margin-bottom: 40px;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 .productdisplay-right-category {
