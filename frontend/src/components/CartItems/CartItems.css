@@ -108,3 +108,131 @@
     cursor: pointer;
     color: white;
 }
+
+/* ---------- 1280px ---------- */
+@media (max-width: 1280px) {
+    .cart-items {
+      margin: 80px 100px;
+    }
+  
+    .cart-items-format-main {
+      gap: 50px;
+      font-size: 16px;
+    }
+  
+    .cart-items-total {
+      margin-right: 100px;
+    }
+  }
+  
+  /* ---------- 1024px ---------- */
+  @media (max-width: 1024px) {
+    .cart-items {
+      margin: 60px 60px;
+    }
+  
+    .cart-items-format-main {
+      gap: 30px;
+      font-size: 15px;
+      grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    }
+  
+    .cart-items-remove-icon {
+      margin: 0 20px;
+    }
+  
+    .cart-items-down {
+      flex-direction: column;
+      gap: 40px;
+    }
+  
+    .cart-items-total {
+      margin-right: 0;
+    }
+  
+    .cart-items-promobox input {
+      width: 200px;
+    }
+  
+    .cart-items-promobox button {
+      width: 100px;
+    }
+  }
+  
+  /* ---------- 800px ---------- */
+  @media (max-width: 800px) {
+    .cart-items {
+      margin: 40px 30px;
+    }
+  
+    .cart-items-format-main {
+      grid-template-columns: 1fr 2fr;
+      font-size: 14px;
+      gap: 10px;
+    }
+  
+    .cart-items-format.cart-items-format-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      text-align: center;
+    }
+  
+    .cart-items-down {
+      margin-top: 60px;
+    }
+  
+    .cart-items-total button {
+      width: 100%;
+    }
+  
+    .cart-items-promobox {
+      padding: 10px;
+    }
+  
+    .cart-items-promobox input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .cart-items-promobox button {
+      width: 100%;
+    }
+  }
+  
+  /* ---------- 500px ---------- */
+  @media (max-width: 500px) {
+    .cart-items-format-main,
+    .cart-items-format.cart-items-format-main {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 13px;
+      gap: 10px;
+    }
+  
+    .cart-items {
+      margin: 30px 15px;
+    }
+  
+    .cart-items-total button {
+      font-size: 14px;
+      height: 50px;
+    }
+  
+    .cart-items-promobox input {
+      height: 40px;
+      font-size: 14px;
+    }
+  
+    .cart-items-promobox button {
+      height: 45px;
+      font-size: 14px;
+    }
+  
+    .cart-items-remove-icon {
+      width: 20px;
+      margin: 0;
+    }
+  }
+  
