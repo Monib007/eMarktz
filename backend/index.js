@@ -87,69 +87,34 @@ const Product = mongoose.model('Product', {
     },
 })
 
-// app.post('/addproduct', async (req, res) => {
-//     // let products = await Products.find({});
-//     // let id;
-//     // if(products.length > 0) {
-//     //     let last_product_array = products.slice(-1);
-//     //     let last_product = last_product_array[0];
-//     //     id = last_product.id + 1;
-        
-
-//     // } else {
-//     //     id = 1;
-//     // }
-//     const last_product = await Products.findOne().sort({ id: -1 });
-//         const id = last_product ? last_product.id + 1 : 1;
-
-//     const product = new Products({
-//         id,
-//         name: req.body.name,
-//         image: req.body.image,
-//         category:  req.body.category,
-//         new_price: req.body.new_price,
-//         old_price: req.body.old_price,
-//     })
-//     console.log(product);
-//     await product.save();
-//     console.log('Saved');
-
-//     res.json({
-//         success: true,
-//         name: req.body.name,
-//     })
-// })
 
 app.post('/addproduct', async (req, res) => {
     try {
-        const last_product = await Product.findOne().sort({ id: -1 });
-        console.log("Last product:", last_product);
-
-        const id = last_product && !isNaN(last_product.id) ? last_product.id + 1 : 1;
-        console.log("New product ID:", id);
-
-        const product = new Products({
-            id,
-            name: req.body.name,
-            image: req.body.image,
-            category: req.body.category,
-            new_price: req.body.new_price,
-            old_price: req.body.old_price,
-        });
-
-        await product.save();
-        console.log('Product saved:', product);
-
-        res.json({
-            success: true,
-            name: product.name,
-        });
+      const last_product = await Product.findOne().sort({ id: -1 });
+      const id = last_product && !isNaN(last_product.id) ? last_product.id + 1 : 1;
+  
+      const product = new Product({
+        id,
+        name: req.body.name,
+        image: req.body.image,
+        category: req.body.category,
+        new_price: req.body.new_price,
+        old_price: req.body.old_price,
+      });
+  
+      await product.save();
+      console.log('Product saved:', product);
+  
+      res.json({
+        success: true,
+        name: product.name,
+      });
     } catch (err) {
-        console.error('Error adding product:', err);
-        res.status(500).json({ success: false, error: err.message });
+      console.error('Error adding product:', err.message);
+      res.status(500).json({ success: false, error: err.message });
     }
-});
-
+  });
+  
 
 // API for deleting products
 
